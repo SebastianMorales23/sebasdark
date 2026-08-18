@@ -1,0 +1,578 @@
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 110px;
+}
+
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    background: #0b1224;
+    color: #ffffff;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    /* Evita desplazamiento horizontal */
+    overflow-x: hidden;
+}
+
+
+/* Las imágenes se adaptarán automáticamente */
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* =========================================
+   BARRA DE NAVEGACIÓN
+========================================= */
+
+.navbar {
+
+    width: 100%;
+
+    min-height: 96px;
+
+    background: #111827;
+
+    border-bottom: 1px solid #263249;
+
+    display: grid;
+
+    /*
+        PC:
+
+        menú izquierdo | logo | menú derecho
+    */
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        auto
+        minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 20px;
+
+    /*
+        clamp permite que el espacio
+        se adapte al tamaño de pantalla
+    */
+
+    padding:
+        18px
+        clamp(20px, 5vw, 70px);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+
+    font-size: clamp(22px, 2vw, 28px);
+
+    font-weight: bold;
+
+    color: #f1f5ff;
+
+    text-align: center;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   MENÚS
+========================================= */
+
+.nav-left,
+.nav-right {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: clamp(14px, 2vw, 32px);
+
+    min-width: 0;
+}
+
+
+.nav-left {
+
+    justify-content: flex-start;
+}
+
+
+.nav-right {
+
+    justify-content: flex-end;
+}
+
+
+/* =========================================
+   ENLACES
+========================================= */
+
+.navbar a {
+
+    position: relative;
+
+    color: #4da3ff;
+
+    text-decoration: none;
+
+    font-size: clamp(14px, 1.2vw, 16px);
+
+    white-space: nowrap;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* Línea debajo */
+
+.navbar a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -7px;
+
+    width: 0;
+
+    height: 2px;
+
+    background: #4da3ff;
+
+    transition: width 0.25s ease;
+}
+
+
+/* Hover */
+
+.navbar a:hover {
+
+    color: #7dbbff;
+
+    transform: translateY(-2px);
+}
+
+
+.navbar a:hover::after {
+
+    width: 100%;
+}
+
+
+/* =========================================
+   CONTENIDO
+========================================= */
+
+.contenido {
+
+    width: min(100%, 1400px);
+
+    min-height: calc(100vh - 96px);
+
+    margin: 0 auto;
+
+    padding:
+        clamp(35px, 6vw, 70px)
+        clamp(20px, 6vw, 100px);
+}
+
+
+/* =========================================
+   SECCIONES
+========================================= */
+
+.contenido section {
+
+    /*
+        En lugar de poner 500px fijo,
+        usamos vh para adaptarnos a
+        diferentes alturas de pantalla.
+    */
+
+    min-height: 60vh;
+
+    scroll-margin-top: 120px;
+}
+
+
+/* =========================================
+   TABLETS / LAPTOPS PEQUEÑAS
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .navbar {
+
+        padding-left: 30px;
+
+        padding-right: 30px;
+
+        gap: 12px;
+    }
+
+
+    .nav-left,
+    .nav-right {
+
+        gap: 15px;
+    }
+
+
+    .navbar a {
+
+        font-size: 14px;
+    }
+
+
+    .logo {
+
+        font-size: 23px;
+    }
+}
+
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media (max-width: 800px) {
+
+    .navbar {
+
+        min-height: auto;
+
+        /*
+            Ahora cada elemento ocupa
+            una fila.
+        */
+
+        grid-template-columns: 1fr;
+
+        grid-template-areas:
+
+            "logo"
+
+            "left"
+
+            "right";
+
+        gap: 18px;
+
+        padding: 20px;
+    }
+
+
+    /* Logo */
+
+    .logo {
+
+        grid-area: logo;
+
+        font-size: 25px;
+    }
+
+
+    /* Menú izquierdo */
+
+    .nav-left {
+
+        grid-area: left;
+    }
+
+
+    /* Menú derecho */
+
+    .nav-right {
+
+        grid-area: right;
+    }
+
+
+    .nav-left,
+    .nav-right {
+
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 12px 20px;
+    }
+
+
+    .navbar a {
+
+        font-size: 15px;
+    }
+
+
+    /* Contenido */
+
+    .contenido {
+
+        width: 100%;
+
+        padding: 35px 25px;
+    }
+
+
+    .contenido section {
+
+        min-height: 55vh;
+    }
+}
+
+
+/* =========================================
+   CELULARES
+========================================= */
+
+@media (max-width: 600px) {
+
+    .navbar {
+
+        padding: 18px 15px;
+
+        gap: 15px;
+    }
+
+
+    /* Logo */
+
+    .logo {
+
+        font-size: 23px;
+    }
+
+
+    /*
+        En celular hacemos dos columnas
+        para los botones.
+    */
+
+    .nav-left,
+    .nav-right {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        width: 100%;
+
+        gap: 8px;
+    }
+
+
+    /* Botones */
+
+    .navbar a {
+
+        width: 100%;
+
+        padding: 9px 5px;
+
+        font-size: 14px;
+
+        text-align: center;
+
+        border: 1px solid #263249;
+
+        border-radius: 7px;
+
+        transition:
+            background 0.25s ease,
+            color 0.25s ease,
+            transform 0.25s ease;
+    }
+
+
+    /*
+        Quitamos la línea inferior
+        en celular.
+    */
+
+    .navbar a::after {
+
+        display: none;
+    }
+
+
+    /* Efecto al tocar */
+
+    .navbar a:hover {
+
+        background: #172238;
+
+        transform: none;
+    }
+
+
+    /* Contenido */
+
+    .contenido {
+
+        padding: 30px 16px;
+    }
+
+
+    .contenido section {
+
+        min-height: 50vh;
+
+        scroll-margin-top: 260px;
+    }
+}
+
+
+/* =========================================
+   CELULARES MUY PEQUEÑOS
+========================================= */
+
+@media (max-width: 380px) {
+
+    .navbar {
+
+        padding: 15px 10px;
+    }
+
+
+    .logo {
+
+        font-size: 21px;
+    }
+
+
+    .navbar a {
+
+        font-size: 13px;
+
+        padding: 8px 3px;
+    }
+
+
+    .contenido {
+
+        padding: 25px 12px;
+    }
+}
+
+
+/* =========================================
+   REDUCIR ANIMACIONES
+   PARA USUARIOS QUE LO PREFIERAN
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+
+        scroll-behavior: auto;
+    }
+
+
+    .navbar a {
+
+        transition: none;
+    }
+}
+
+
+
+@media (max-width: 600px) {
+
+    #inicio {
+        min-height: 70vh;
+    }
+
+    .titulo-lineas {
+        gap: 8px;
+    }
+
+    .titulo-lineas > span {
+        min-width: 10px;
+    }
+
+    .texto-inicio {
+        width: 100%;
+        padding: 0 5px;
+    }
+
+    .texto-inicio h4 {
+        font-size: 21px;
+        line-height: 1.35;
+        margin-bottom: 16px;
+    }
+
+    .texto-inicio p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+}
+@media (min-width: 1200px) {
+
+    .texto-inicio {
+        max-width: 800px;
+    }
+
+    .texto-inicio h4 {
+        font-size: 28px;
+    }
+
+    .texto-inicio p {
+        font-size: 18px;
+    }
+}
+.imagenes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.imagenes img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+#inicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
