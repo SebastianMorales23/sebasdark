@@ -514,6 +514,9 @@ img {
 
 
 
+/* =========================
+   CELULARES
+   ========================= */
 @media (max-width: 600px) {
 
     #inicio {
@@ -529,8 +532,10 @@ img {
     }
 
     .texto-inicio {
-        width: 100%;
-        padding: 0 5px;
+        width: 92%;
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
     }
 
     .texto-inicio h4 {
@@ -543,19 +548,40 @@ img {
         font-size: 15px;
         line-height: 1.6;
     }
+
+    .texto-inicio img {
+        max-width: 100%;
+        height: auto;
+    }
 }
-@media (min-width: 1200px) {
+
+
+/* =========================
+   PC / PANTALLAS GRANDES
+   ========================= */
+@media (min-width: 601px) {
 
     .texto-inicio {
-        max-width: 800px;
+        width: 90%;
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
     }
 
     .texto-inicio h4 {
         font-size: 28px;
+        line-height: 1.35;
+        margin-bottom: 16px;
     }
 
     .texto-inicio p {
         font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .texto-inicio img {
+        max-width: 100%;
+        height: auto;
     }
 }
 .imagenes {
