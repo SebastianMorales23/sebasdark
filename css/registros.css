@@ -3,19 +3,32 @@
    ========================= */
 
 .registros {
+
     width: 90%;
-    max-width: 1100px;
+    max-width: 1000px;
+
     margin: 60px auto;
+
     text-align: center;
 }
 
+
+/* TÍTULO */
+
 .registros h1 {
+
     font-size: 40px;
+
     margin-bottom: 25px;
 }
 
+
+/* TEXTO */
+
 .registros p {
+
     font-size: 18px;
+
     line-height: 1.7;
 }
 
@@ -27,16 +40,26 @@
 @media (max-width: 600px) {
 
     .registros {
+
         width: 92%;
+
         margin: 40px auto;
     }
 
+
     .registros h1 {
+
         font-size: 28px;
+
+        line-height: 1.3;
     }
 
+
     .registros p {
+
         font-size: 15px;
+
+        line-height: 1.6;
     }
 
 }

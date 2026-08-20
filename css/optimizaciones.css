@@ -3,19 +3,32 @@
    ========================= */
 
 .optimizaciones {
+
     width: 90%;
     max-width: 1000px;
-    margin: 80px auto;
+
+    margin: 60px auto;
+
     text-align: center;
 }
 
+
+/* TÍTULO */
+
 .optimizaciones h1 {
+
     font-size: 40px;
+
     margin-bottom: 25px;
 }
 
+
+/* TEXTO */
+
 .optimizaciones p {
+
     font-size: 18px;
+
     line-height: 1.7;
 }
 
@@ -27,16 +40,26 @@
 @media (max-width: 600px) {
 
     .optimizaciones {
+
         width: 92%;
-        margin: 50px auto;
+
+        margin: 40px auto;
     }
+
 
     .optimizaciones h1 {
+
         font-size: 28px;
+
+        line-height: 1.3;
     }
 
+
     .optimizaciones p {
+
         font-size: 15px;
+
+        line-height: 1.6;
     }
 
 }
