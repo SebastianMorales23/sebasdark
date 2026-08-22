@@ -535,18 +535,20 @@ img {
         width: 92%;
         max-width: 900px;
         margin: 0 auto;
-        text-align: center;
+        text-align: left;
     }
 
     .texto-inicio h4 {
         font-size: 21px;
         line-height: 1.35;
         margin-bottom: 16px;
+        text-align: left;
     }
 
     .texto-inicio p {
         font-size: 15px;
         line-height: 1.6;
+        text-align: left;
     }
 
     .texto-inicio img {
@@ -565,25 +567,28 @@ img {
         width: 90%;
         max-width: 900px;
         margin: 0 auto;
+        text-align: left;
+    }
+
+    .texto-inicio h2 {
         text-align: center;
     }
 
     .texto-inicio h4 {
+        text-align: center;
         font-size: 28px;
         line-height: 1.35;
         margin-bottom: 16px;
     }
 
     .texto-inicio p {
+        text-align: left;
         font-size: 18px;
         line-height: 1.6;
     }
 
-    .texto-inicio img {
-        max-width: 100%;
-        height: auto;
-    }
 }
+
 .imagenes {
     display: flex;
     justify-content: center;
